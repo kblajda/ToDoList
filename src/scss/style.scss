@@ -1,0 +1,18 @@
+@import "settings";
+@import url('https://fonts.googleapis.com/css?family=Montserrat:400,700&display=swap&subset=latin-ext');
+
+* {
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    background: $color-bg;
+    font-family: $font-style;
+    background-repeat: no-repeat;
+}
+
+h1 {
+    color: $text-color;
+    display: flex;
+}
