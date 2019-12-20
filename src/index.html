@@ -23,13 +23,21 @@
             </div>
         </div>
     </header>
-    <section class="listContainer">
+    <section class="toDo">
         <div class="container">
             <div class="row">
                 <div class="col-lg-12">
-                    <ul>
-                        <li><a href="#">lista</a></li>
-                    </ul>
+                    <div class="toDo__wrapp">
+                        <form action="" class="toDoForm">
+                            <input type="text" class="toDoForm__input">
+                            <button class="addTaskBttn">Add task</button>
+                        </form>
+                        <h2 class="toDoForm__counter">Task counter: <span></span></h2>
+                        <div class="toDoList">
+                            <ul class="toDoList__list"></ul>
+                        </div>
+
+                    </div>
                 </div>
             </div>
         </div>
