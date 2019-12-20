@@ -1,2 +1,3 @@
-# ToDoList
-Simple to do list v1.0
+# To Do List
+Simple to do list.
+Version 1.0
