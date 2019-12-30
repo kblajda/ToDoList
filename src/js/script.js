@@ -14,8 +14,9 @@ const addTask = (e) => {
     const taskName = inputTask.value;
     if (taskName === "") return;
     const newTask = document.createElement('li');
+
     newTask.className = 'toDoList__item';
-    newTask.innerHTML = taskName + "<button>Delete</button>";
+    newTask.innerHTML = `<p>` + `</p>` + taskName + `<button class="toDoForm__bttn item__remove">Delete</button>`;
     toDoList.push(newTask);
     renderList();
     taskList.appendChild(newTask);
@@ -28,8 +29,8 @@ const addTask = (e) => {
 const removeTask = (e) => {
     //remove from array
     const index = e.target.parentNode.dataset.key; // take dataset remove elements form array
-    toDoList.splice(index);
-    taskNumber.textContent = listItem.length;
+    toDoList.splice(index, 1);
+    taskNumber.textContent = toDoList.length;
     renderList();
 }
 

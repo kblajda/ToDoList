@@ -13,12 +13,11 @@
 </head>
 
 <body>
-    <header>
+    <header class="header">
         <div class="container">
             <div class="row">
                 <div class="col-lg-12">
-                    <h1>Simple To Do List App</h1>
-                    <h2>V.1.0</h2>
+                    <h1 class="header__head head">Simple To Do List App</h1>
                 </div>
             </div>
         </div>
@@ -27,33 +26,47 @@
         <div class="container">
             <div class="row">
                 <div class="col-lg-12">
+                    <form action="" class="toDoForm">
+                        <input type="text" class="toDoForm__input" placeholder="Add task" name="name" required
+                            id='name'>
+                        <label for="name" class="toDoForm__label">Task name</label>
+                        <button class="toDoForm__bttn toDoForm__bttn--addTask">Add task</button>
+                        <h2 class="toDoForm__counter">Number of task: <span></span></h2>
+                    </form>
                     <div class="toDo__wrapp">
-                        <form action="" class="toDoForm">
-                            <input type="text" class="toDoForm__input">
-                            <button class="addTaskBttn">Add task</button>
-                        </form>
-                        <h2 class="toDoForm__counter">Task counter: <span></span></h2>
-                        <div class="toDoList">
-                            <ul class="toDoList__list"></ul>
+                        <div class="row">
+                            <div class="col-lg-6">
+                                <div class="toDoList">
+                                    <h2 class="toDoList__head head">To do:</h2>
+                                    <ul class="toDoList__list"></ul>
+                                </div>
+                            </div>
+                            <div class="col-lg-6">
+                                <div class="doneList">
+                                    <h2 class="doneList__head head">Done:</h2>
+                                    <ul class="doneList__list">
+                                        <li class="doneList__item">IN PROGRESS...</li>
+                                    </ul>
+                                </div>
+                            </div>
                         </div>
-
                     </div>
                 </div>
             </div>
         </div>
+        </div>
     </section>
-    <footer>
+    <footer class="footer">
         <div class="container">
             <div class="row">
                 <div class="col-lg-12">
                     <div class="copyrights">
-                        <p>all rights reserved. copyright © 2019</p>
-                        <span>Krystian Błajda</span>
+                        <p class="copyrigths__rights">copyright © 2019</p>
+                        <span class="copyrigths__signature">k.blajda</span>
                     </div>
                 </div>
             </div>
         </div>
-
     </footer>
 
     <!-- build:js -->

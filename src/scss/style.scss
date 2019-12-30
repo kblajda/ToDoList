@@ -10,9 +10,194 @@ body {
     background: $color-bg;
     font-family: $font-style;
     background-repeat: no-repeat;
+    height: 100vh;
 }
 
-h1 {
-    color: $text-color;
-    display: flex;
+.header {
+    text-align: center;
+    padding-top: 50px;
+}
+
+.head {
+
+    text-align: center;
+    font-style: italic;
+    background: -webkit-linear-gradient($primary, $secondary);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+}
+
+.toDo {
+    margin-top: 50px;
+}
+
+.toDoForm {
+    position: relative;
+
+    &__input {
+        padding: 5px 0;
+        background: transparent;
+        border: none;
+        color: $white;
+        border-bottom: 2px solid $gray;
+        outline: 0;
+
+        &::placeholder {
+            color: transparent;
+        }
+
+        &:placeholder-shown~.toDoForm__label {
+            cursor: text;
+            top: 0px;
+            font-size: 20px;
+            z-index: -1;
+        }
+
+        &:focus {
+            padding-bottom: 6px;
+            border-bottom: 2px solid teal;
+            border-width: 2px;
+            border-image: linear-gradient(to right, $primary, $secondary);
+            border-image-slice: 1;
+        }
+
+        &:focus~.toDoForm__label {
+            top: -20px;
+            color: $primary;
+            font-size: 15px;
+        }
+    }
+
+    &__label {
+        position: absolute;
+        top: -20px;
+        display: block;
+        margin-bottom: 0;
+        transition: 0.2s ease-in-out;
+        color: $gray;
+    }
+
+    &__bttn {
+        position: relative;
+        color: $gray;
+        background: transparent;
+        border: 1px solid $gray;
+        border-radius: 10px;
+        font-size: 15px;
+        padding: 5px;
+        margin-left: 10px;
+        transition: .2s ease-in-out;
+
+        &:hover {
+            border: 1px solid $primary;
+            color: $primary;
+        }
+    }
+
+    &__counter {
+        position: absolute;
+        right: 0;
+        display: inline-block;
+        font-size: 15px;
+        color: $gray;
+    }
+}
+
+.toDo__wrapp {
+    margin-top: 30px;
+}
+
+.toDoList {
+    width: 100%;
+
+    &__list {
+        display: flex;
+        flex-basis: 300px;
+        flex-direction: column;
+        flex-wrap: wrap;
+        border: 1px solid $gray;
+        margin-top: 30px;
+        border-width: 2px;
+        border-image: linear-gradient(to right, $primary, $secondary);
+        border-image-slice: 1;
+    }
+
+    &__item {
+        display: flex;
+        flex-wrap: wrap;
+        margin: 7px 15px 7px 15px;
+        align-items: center;
+        background: -webkit-linear-gradient($primary, $secondary);
+        -webkit-background-clip: text;
+        -webkit-text-fill-color: transparent;
+        border-bottom: 1px solid transparent;
+        transition: .2s ease-in-out;
+
+        &:hover {
+            border-top: 0;
+            border-right: 0;
+            border-left: 0;
+            border-bottom: 1px solid teal;
+            border-width: 1px;
+            border-image: linear-gradient(to right, $primary, $secondary);
+            border-image-slice: 1;
+
+        }
+    }
+}
+
+.item__remove {
+    margin-left: auto;
+    margin-right: 15px;
+    -webkit-text-fill-color: $gray;
+    transition: .2s ease-in-out;
+    border: 1px solid transparent;
+
+    &:hover {
+        color: $primary;
+        -webkit-text-fill-color: $primary;
+    }
+}
+
+.doneList {
+    &__list {
+        display: flex;
+        flex-basis: 300px;
+        flex-direction: column;
+        flex-wrap: wrap;
+        border: 1px solid $gray;
+        margin-top: 30px;
+        border-width: 2px;
+        border-image: linear-gradient(to right, $primary, $secondary);
+        border-image-slice: 1;
+    }
+
+    &__item {
+        display: flex;
+        flex-wrap: wrap;
+        margin: 7px 15px 7px 15px;
+        align-items: center;
+        background: -webkit-linear-gradient($primary, $secondary);
+        -webkit-background-clip: text;
+        -webkit-text-fill-color: transparent;
+        border-bottom: 1px solid transparent;
+        transition: .2s ease-in-out;
+    }
+}
+
+.footer {
+    left: 0;
+    right: 0;
+    text-align: center;
+    color: $gray;
+}
+
+.copyrigths {
+    &__rights {
+        display: inline;
+    }
+
+    &__signature {
+        font-weight: 600;
+    }
 }
