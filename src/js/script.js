@@ -1,14 +1,14 @@
-const toDoList = [];
+let toDoList = [];
 const form = document.querySelector('.toDoForm')
 const taskList = document.querySelector('.toDoList__list');
 const taskNumber = document.querySelector('.toDoForm__counter span');
 const listItem = document.getElementsByClassName('toDoList__item');
-const inputTask = document.querySelector('.toDoForm__input')
+const inputTask = document.querySelector('.toDoForm__input--add');
+const searchInput = document.querySelector('.toDoForm__input--search');
 
 
 
-
-//function to add task on task list.
+//function to add task to task list.
 const addTask = (e) => {
     e.preventDefault();
     const taskName = inputTask.value;
@@ -43,5 +43,14 @@ const renderList = () => {
     })
 }
 
+const searchTask = (e) => {
+    const searchText = (e.target.value.toLowerCase());
+    let tasks = [...listItem];
+    tasks = tasks.filter(listElements => listElements.textContent.toLowerCase().includes(searchText));
+    console.log(tasks);
+    // taskList.textContent = "";
+    tasks.forEach(listElements => tasks.appendChild(listElements));
 
+}
+searchInput.addEventListener('input', searchTask);
 form.addEventListener('submit', addTask);

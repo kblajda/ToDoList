@@ -26,27 +26,47 @@
         <div class="container">
             <div class="row">
                 <div class="col-lg-12">
-                    <form action="" class="toDoForm">
-                        <input type="text" class="toDoForm__input" placeholder="Add task" name="name" required
-                            id='name'>
-                        <label for="name" class="toDoForm__label">Task name</label>
-                        <button class="toDoForm__bttn toDoForm__bttn--addTask">Add task</button>
-                        <h2 class="toDoForm__counter">Number of task: <span></span></h2>
-                    </form>
-                    <div class="toDo__wrapp">
-                        <div class="row">
-                            <div class="col-lg-6">
-                                <div class="toDoList">
-                                    <h2 class="toDoList__head head">To do:</h2>
-                                    <ul class="toDoList__list"></ul>
+                    <div class="toDo__content">
+                        <form action="" class="toDoForm">
+                            <input type="text" class="toDoForm__input--add" placeholder="Add task" name="name" required
+                                id='name'>
+                            <label for="name" class="toDoForm__label--add">Add task</label>
+                            <button class="toDoForm__bttn toDoForm__bttn--addTask">Add task</button>
+                        </form>
+                        <div class="toDo__search">
+                            <input type="text" class="toDoForm__input--search" placeholder="Search task" name="search"
+                                required id='search'>
+                            <label for="search" class="toDoForm__label--search">Search task</label>
+                            <h2 class="toDoForm__counter">Number of task: <span></span></h2>
+                        </div>
+                        <div class="toDo__TaskWrapp">
+                            <div class="row">
+                                <div class="col-lg-6">
+                                    <div class="toDoList">
+                                        <h2 class="toDoList__head head">To do:</h2>
+                                        <ul class="toDoList__list">
+                                            <li class="toDoList__item" data-key="0">
+                                                <p></p>Clean room<button
+                                                    class="toDoForm__bttn item__remove">Delete</button>
+                                            </li>
+                                            <li class="toDoList__item" data-key="1">
+                                                <p></p>Go to gym<button
+                                                    class="toDoForm__bttn item__remove">Delete</button>
+                                            </li>
+                                            <li class="toDoList__item" data-key="2">
+                                                <p></p>Do shoping<button
+                                                    class="toDoForm__bttn item__remove">Delete</button>
+                                            </li>
+                                        </ul>
+                                    </div>
                                 </div>
-                            </div>
-                            <div class="col-lg-6">
-                                <div class="doneList">
-                                    <h2 class="doneList__head head">Done:</h2>
-                                    <ul class="doneList__list">
-                                        <li class="doneList__item">IN PROGRESS...</li>
-                                    </ul>
+                                <div class="col-lg-6">
+                                    <div class="doneList">
+                                        <h2 class="doneList__head head">Done:</h2>
+                                        <ul class="doneList__list">
+                                            <li class="doneList__item">IN PROGRESS...</li>
+                                        </ul>
+                                    </div>
                                 </div>
                             </div>
                         </div>

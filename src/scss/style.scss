@@ -33,8 +33,10 @@ body {
 
 .toDoForm {
     position: relative;
+    display: inline-block;
 
-    &__input {
+    &__input--add,
+    &__input--search {
         padding: 5px 0;
         background: transparent;
         border: none;
@@ -46,7 +48,8 @@ body {
             color: transparent;
         }
 
-        &:placeholder-shown~.toDoForm__label {
+        &:placeholder-shown~.toDoForm__label--add,
+        &:placeholder-shown~.toDoForm__label--search {
             cursor: text;
             top: 0px;
             font-size: 20px;
@@ -61,14 +64,16 @@ body {
             border-image-slice: 1;
         }
 
-        &:focus~.toDoForm__label {
+        &:focus~.toDoForm__label--add,
+        &:focus~.toDoForm__label--search {
             top: -20px;
             color: $primary;
             font-size: 15px;
         }
     }
 
-    &__label {
+    &__label--add,
+    &__label--search {
         position: absolute;
         top: -20px;
         display: block;
@@ -103,7 +108,12 @@ body {
     }
 }
 
-.toDo__wrapp {
+.toDo__search {
+    display: inline-block;
+    margin-left: 50px;
+}
+
+.toDo__TaskWrapp {
     margin-top: 30px;
 }
 
@@ -132,6 +142,7 @@ body {
         -webkit-text-fill-color: transparent;
         border-bottom: 1px solid transparent;
         transition: .2s ease-in-out;
+        padding-bottom: 3px;
 
         &:hover {
             border-top: 0;
