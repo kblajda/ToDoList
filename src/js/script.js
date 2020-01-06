@@ -1,4 +1,5 @@
-let toDoList = [];
+const toDoList = [...document.getElementsByClassName('toDoList__item')];
+
 const form = document.querySelector('.toDoForm')
 const taskList = document.querySelector('.toDoList__list');
 const taskNumber = document.querySelector('.toDoForm__counter span');
@@ -6,8 +7,9 @@ const listItem = document.getElementsByClassName('toDoList__item');
 const inputTask = document.querySelector('.toDoForm__input--add');
 const searchInput = document.querySelector('.toDoForm__input--search');
 
+
 taskNumber.textContent = listItem.length;
-toDoList = [...document.getElementsByClassName('toDoList__item')];
+
 
 //function to add task to task list.
 const addTask = (e) => {
@@ -46,13 +48,13 @@ const renderList = () => {
 
 const searchTask = (e) => {
     const searchText = (e.target.value.toLowerCase());
-    let tasks = [...listItem];
+    console.log(searchText)
+    let tasks = toDoList;
+
     tasks = tasks.filter(task => task.textContent.toLowerCase().includes(searchText));
     console.log(tasks);
     taskList.textContent = "";
-
     tasks.forEach(task => taskList.appendChild(task));
-    renderList()
 
 }
 searchInput.addEventListener('input', searchTask);
