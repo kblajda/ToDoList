@@ -6,7 +6,8 @@ const listItem = document.getElementsByClassName('toDoList__item');
 const inputTask = document.querySelector('.toDoForm__input--add');
 const searchInput = document.querySelector('.toDoForm__input--search');
 
-
+taskNumber.textContent = listItem.length;
+toDoList = [...document.getElementsByClassName('toDoList__item')];
 
 //function to add task to task list.
 const addTask = (e) => {
@@ -14,15 +15,15 @@ const addTask = (e) => {
     const taskName = inputTask.value;
     if (taskName === "") return;
     const newTask = document.createElement('li');
-
     newTask.className = 'toDoList__item';
-    newTask.innerHTML = `<p>` + `</p>` + taskName + `<button class="toDoForm__bttn item__remove">Delete</button>`;
+    newTask.innerHTML = taskName + `<button class="toDoForm__bttn item__remove">Delete</button>`;
     toDoList.push(newTask);
     renderList();
     taskList.appendChild(newTask);
     inputTask.value = "";
     taskNumber.textContent = listItem.length;
-    newTask.querySelector('button').addEventListener('click', removeTask);
+    newTask.querySelector('.item__remove').addEventListener('click', removeTask);
+
 }
 
 // function to remove task from task list.
@@ -46,10 +47,12 @@ const renderList = () => {
 const searchTask = (e) => {
     const searchText = (e.target.value.toLowerCase());
     let tasks = [...listItem];
-    tasks = tasks.filter(listElements => listElements.textContent.toLowerCase().includes(searchText));
+    tasks = tasks.filter(task => task.textContent.toLowerCase().includes(searchText));
     console.log(tasks);
-    // taskList.textContent = "";
-    tasks.forEach(listElements => tasks.appendChild(listElements));
+    taskList.textContent = "";
+
+    tasks.forEach(task => taskList.appendChild(task));
+    renderList()
 
 }
 searchInput.addEventListener('input', searchTask);
